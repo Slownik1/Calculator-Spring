@@ -3,5 +3,10 @@ package com.example.Calculator.Spring;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculatrorService {
+public class CalculatorService {
+
+    public int add(int a, int b){
+        return a+b;
+    }
+
 }
