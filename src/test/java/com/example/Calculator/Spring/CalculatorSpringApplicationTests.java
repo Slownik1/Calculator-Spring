@@ -23,4 +23,43 @@ class CalculatorSpringApplicationTests {
 		//THEN
 		assertEquals(0, result);
 	}
+
+	@Test
+	void twoPlusTwoShouldGiveFour(){
+		//GIVEN
+		int a =2;
+		int b =2;
+
+		//WHEN
+		int result = calculatorService.add(a, b);
+
+		//THEN
+		assertEquals(4, result);
+	}
+
+	@Test
+	void twoPlusTwoGiveFive(){
+		//GIVEN
+		int a=2;
+		int b=2;
+
+		//WHEN
+		int result = calculatorService.add(a, b);
+
+		//THEN
+		assertEquals(5, result);
+	}
+
+	@Test
+	void fourDivideByTwoGivesOne(){
+		//GIVEN
+		int a=4;
+		int b=2;
+
+		//WHEN
+		int reslut =calculatorService.divide(4, 2);
+
+		//THEN
+		assertEquals(1, reslut);
+	}
 }
