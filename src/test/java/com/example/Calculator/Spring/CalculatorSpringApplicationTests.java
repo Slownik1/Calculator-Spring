@@ -62,4 +62,30 @@ class CalculatorSpringApplicationTests {
 		//THEN
 		assertEquals(1, reslut);
 	}
+
+	@Test
+	void twoMinusTwoGivesZero(){
+		//GIVEN
+		int a=2;
+		int b=2;
+
+		//WHEN
+		int reslut =calculatorService.minus(2, 2);
+
+		//THEN
+		assertEquals(0, reslut);
+	}
+
+	@Test
+	void twoMinusTwoGivesOne(){
+		//GIVEN
+		int a=2;
+		int b=2;
+
+		//WHEN
+		int reslut =calculatorService.minus(2, 2);
+
+		//THEN
+		assertEquals(1, reslut);
+	}
 }
