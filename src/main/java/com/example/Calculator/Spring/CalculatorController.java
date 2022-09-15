@@ -2,6 +2,7 @@ package com.example.Calculator.Spring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,11 @@ public class CalculatorController {
 
     public CalculatorController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
+    }
+
+    @RequestMapping(value="/add")
+    public String add(){
+        return"add";
     }
 
     @GetMapping("/add")
