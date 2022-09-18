@@ -1,12 +1,13 @@
 package com.example.Calculator.Spring;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @Slf4j
 public class CalculatorController {
 
@@ -16,14 +17,15 @@ public class CalculatorController {
         this.calculatorService = calculatorService;
     }
 
-    @RequestMapping(value="/add")
-    public String add(){
-        return"add";
+    @RequestMapping(value="/index")
+    public String index(){
+        return "index";
     }
 
-    @GetMapping("/add")
+    @PostMapping ("/add")
     public int add(@RequestParam(name = "a") int a, @RequestParam(name = "b") int b){
         return calculatorService.add(a, b);
+        return "add";
     }
 
     @GetMapping("/minus")

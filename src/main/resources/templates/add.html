@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <title>Add</title>
+</head> 
 <body>
+
+<p>Insert two numbers for add</p>
+
+<form th:action="@{/add}" , method="post">
+
+    <input type="number" th:name="a"/>
+    <input type="number" th:name="b"/>
+    <input type="submit" value="Add numbers">
+
+
+</form>
 
 </body>
 </html>
