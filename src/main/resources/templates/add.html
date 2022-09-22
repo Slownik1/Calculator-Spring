@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Add</title>
@@ -8,12 +8,11 @@
 
 <p>Insert two numbers for add</p>
 
-<form th:action="@{/add}" , method="post">
+<form action="#" th:action="@{/add}"  method="post" th:object="${calculate}">
 
-    <input type="number" th:name="a"/>
-    <input type="number" th:name="b"/>
-    <input type="submit" value="Add numbers">
-
+    <input type="number" th:field="*{a}"/><br>
+    <input type="number" th:field="*{b}"/>
+    <button type="submit">ADD</button>
 
 </form>
 

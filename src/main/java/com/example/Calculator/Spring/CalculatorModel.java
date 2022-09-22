@@ -5,9 +5,14 @@ public class CalculatorModel {
     private int a;
     private int b;
 
-    public CalculatorModel(int a, int b) {
-        this.a = a;
-        this.b = b;
+    private int result;
+
+    public int getResult() {
+        return result;
+    }
+
+    public void setResult(int result) {
+        this.result = result;
     }
 
     public int getA() {
@@ -24,5 +29,14 @@ public class CalculatorModel {
 
     public void setB(int b) {
         this.b = b;
+    }
+
+    @Override
+    public String toString() {
+        return "CalculatorModel{" +
+                "a=" + a +
+                ", b=" + b +
+                ", result=" + result +
+                '}';
     }
 }

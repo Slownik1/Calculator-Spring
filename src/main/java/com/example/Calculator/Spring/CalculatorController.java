@@ -2,10 +2,8 @@ package com.example.Calculator.Spring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @Slf4j
@@ -22,10 +20,20 @@ public class CalculatorController {
         return "index";
     }
 
-    @PostMapping ("/add")
-    public int add(@RequestParam(name = "a") int a, @RequestParam(name = "b") int b){
-        return calculatorService.add(a, b);
+    @GetMapping (value="/add")
+    public String addInsertValue(Model model){
+
+        CalculatorModel calculatorModel = new CalculatorModel();
+        model.addAttribute("calculate", calculatorModel);
         return "add";
+    }
+
+    @PostMapping(value="/add")
+    public String addShowResult(@ModelAttribute("calculate") CalculatorModel calculate){
+        calculate.setResult(calculatorService.add(calculate.getA(), calculate.getB()));
+        System.out.print(calculate.getResult());
+        return "addResult";
+
     }
 
     @GetMapping("/minus")
